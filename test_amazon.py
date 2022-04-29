@@ -29,8 +29,9 @@ def test_page_object():
     productPage.addToCart()
     confirmationPage = ConfirmationPage(driver)
     confirmationPage.openCart()
+    target_quantity = "2"
     cartPage = CartPage(driver)
-    cartPage.changeQuantity(2)
-    assert cartPage.getQuantity() == '2'
+    cartPage.changeQuantity(target_quantity)
+    assert cartPage.getQuantity() == target_quantity
 
 
